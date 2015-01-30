@@ -1,0 +1,15 @@
+<ion-view>
+    <ion-pane no-scroll>
+        <td-cards>
+            <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
+                     on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
+                     on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
+
+                <div class="image" ng-controller="CardCtrl">
+                    <img ng-src="{{card.image}}" height="300" width="300">
+                </div>
+
+            </td-card>
+        </td-cards>
+    </ion-pane>
+</ion-view>
