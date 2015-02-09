@@ -29,6 +29,11 @@ angular.module('hc', ['ionic', 'hc.controllers', 'ionic.contrib.ui.tinderCards']
                 url: '/home',
                 templateUrl: 'templates/home.html',
                 controller: 'HomeCtrl'
+            })
+            .state('graph', {
+                url: '/graph',
+                templateUrl: 'templates/graph.html',
+                controller: 'GraphCtrl'
             });
 
         $urlRouterProvider.otherwise('/login');

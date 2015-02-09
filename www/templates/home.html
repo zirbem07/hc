@@ -1,12 +1,37 @@
 <ion-view>
-    <ion-pane>
-        <td-cards>
+    <div class="bar bar-header bar-royal">
+        <button class="button button-icon icon ion-stats-bars" ng-click="toGraph()"></button>
+        <h1 class="title">Exercises</h1>
+        <button class="button button-icon icon ion-calendar"></button>
+    </div>
+    <ion-pane no-scroll>
+        <td-cards >
             <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
                      on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
                      on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
+                <div class="">
+                    <div class="item item-body">
+                        <div ng-controller="CardCtrl">
+                            <img  class="full-image"  ng-src="{{card.img}}" height="300" width="300">
+                        </div>
+                        <p>
+                            <strong>{{card.name}}</strong>
+                        </p>
+                        <p>
+                            {{card.desc}}
+                        </p>
+                    </div>
 
-                <div class="image" ng-controller="CardCtrl">
-                    <img ng-src="{{card.image}}" height="300" width="300">
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-clock"></i>
+                            <strong>{{card.time}} min</strong>
+                        </a>
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-refresh"></i>
+                            <strong>{{card.reps}} reps</strong>
+                        </a>
+                    </div>
                 </div>
 
             </td-card>
